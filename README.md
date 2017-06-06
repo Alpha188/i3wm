@@ -1,6 +1,6 @@
 # i3wm
-you need install 
- -  i3statu
+you need to install 
+ -  i3status
  - compton
  - urxvt
  - conky
