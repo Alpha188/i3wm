@@ -9,17 +9,6 @@ Plug 'tomasr/molokai'
 
 
 call plug#end()
-autocmd vimenter * NERDTree "for NERDTree
-nmap <F8> :TagbarToggle<CR> 
-
-"syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 "
 let mapleader=";"
@@ -220,7 +209,7 @@ map <F3> :TagbarToggle<CR>
 
 
 "NERDTree config
-map <F2> :NERDTreeTabsToggle<CR>
+map <F2> :NERDTreeToggle<CR>
 " 关闭vim时，如果没有打开的文件，关闭NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Change the arrow
