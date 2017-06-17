@@ -1,5 +1,29 @@
+"Plug>>>>>
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'ervandew/supertab'
+Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'vim-syntastic/syntastic'
+Plug 'tomasr/molokai' 
+
+
+call plug#end()
+autocmd vimenter * NERDTree "for NERDTree
+nmap <F8> :TagbarToggle<CR> 
+
+"syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"
 let mapleader=";"
-set guifont=Droid\ Sans\ Mono\ \Regular\ 13
+set guifont=Droid\ Sans\ Mono\ \Regular\ 12
 colorscheme railscasts
 " 设置重新载入.vimrc快捷键
 map <silent> <leader>ss :source ~/.vimrc<CR>
