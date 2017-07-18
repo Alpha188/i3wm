@@ -1,0 +1,20 @@
+#!/bin/python
+
+import urllib.request, json
+
+try:
+  w = urllib.request.urlopen("http://www.baidu.com")
+except:
+  print('Get weather error')
+else:
+  city = "wenzhou"
+  api_key = "52037925e152251420396812dc282b6c"
+  units ="Metric"
+  unit_key = "C"
+
+  weather = eval(str(urllib.request.urlopen("http://api.openweathermap.org/data/2.5/weather?q={}&APPID={}&units={}".format(city, api_key, units)).read())[2:-1])
+
+  info = weather["weather"][0]["description"].capitalize()
+  temp = int(float(weather["main"]["temp"]))
+
+  print("%s, %i °%s" % (info, temp, unit_key))
