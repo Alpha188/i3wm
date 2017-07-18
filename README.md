@@ -1,6 +1,8 @@
 # i3wm
 you need to install 
- -  i3status
+ -  polybar
+ -  rofi
+ -  zsh & oh-my-zsh
  - compton
  - urxvt
  - conky
