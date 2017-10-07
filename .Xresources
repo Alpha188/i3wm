@@ -220,19 +220,31 @@ URxvt*saveLines:                      5000
 ! -xos4-terminus-bold-r-normal--24-240-72-72-c-120-iso10646-1
 ! -xos4-terminus-bold-r-normal--28-280-72-72-c-140-iso10646-1
 ! -xos4-terminus-bold-r-normal--32-320-72-72-c-160-iso10646-1
-
-
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
-! Copyright: 2017 leofa
 ! ------------------------------------------------------------------------------
-! "Color scheme for normal row" Set from: File
-rofi.color-normal:                   argb:0383c4a, #c4cbd4, argb:96404552, #4084d6, #f9f9f9
-! "Color scheme for urgent row" Set from: File
-rofi.color-urgent:                   argb:02d303b, #cc6666, argb:e52d303b, #a54242, #f9f9f9
-! "Color scheme for active row" Set from: File
-rofi.color-active:                   argb:02d303b, #b5bd68, argb:e42d303b, #8c9440, #f9f9f9
-! "Color scheme window" Set from: File
-rofi.color-window:                   argb:f22d303b, #7c8389, #1d1f21
-! "Separator style (none, dash, solid)" Set from: XResources
+! Use extended color scheme
+rofi.color-enabled:                  true
+! Color scheme for normal row
+rofi.color-normal:                   argb:00000000,  #D8DEE9 , argb:00000000,  #f3f99d ,  #1B2B34
+! Color scheme for urgent row
+rofi.color-urgent:                   argb:00000000,  #F99157 , argb:00000000,  #F99157 ,  #1B2B34
+! Color scheme for active row
+rofi.color-active:                   argb:00000000,  #6699CC , argb:00000000,  #6699CC ,  #1B2B34
+! Color scheme window
+rofi.color-window:                   argb:D0202020,  #f3f99d ,  #f3f99d
 rofi.separator-style:                solid
+rofi.hide-scrollbar:                 true
+! rofi.fullscreen:                     true
+rofi.display-run:		     shell
+rofi.display-drun:		     app
+rofi.font:                           hack 12
+rofi.width:                          100
+rofi.bw:                             0
+rofi.lines:                          15
+rofi.location:			     2
+rofi.yoffset:                        23
+rofi.padding:                        10
+rofi.fixed-num-lines:                false
+! rofi.kb-cancel:                      Escape,Mod4+w
+
