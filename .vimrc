@@ -4,10 +4,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
-Plug 'vim-syntastic/syntastic'
 Plug 'tomasr/molokai' 
+Plug 'w0rp/ale'
 Plug 'liuchengxu/space-vim-dark'
-Plug 'vim-scripts/Pydiction'
 Plug 'scrooloose/nerdcommenter'
 ""Plug 'Valloric/YouCompleteMe'
 Plug 'Chiel92/vim-autoformat'
@@ -16,7 +15,7 @@ call plug#end()
 
 "
 let mapleader=";"
-set guifont=Hack\ 11
+set guifont=Hack\ 14
 "colorscheme molokai
 colorscheme space-vim-dark
 " 设置重新载入.vimrc快捷键
@@ -319,8 +318,6 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 set mouse=a
 
-" pydict settings
-let g:pydiction_location = '/home/alpha/.vim/plugged/Pydiction/complete-dict'
 
 " nerdcommenter
 " <leader>cs   加注释
@@ -338,3 +335,20 @@ let g:vimrc_author='alpha@ln'
 let g:vimrc_email='1228790403@qq.com' 
 
 nmap <F1> :AuthorInfoDetect<cr> 
+
+"ale
+"始终开启标志列
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+"自定义error和warning图标
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚡'
+"在vim自带的状态栏中整合ale
+let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
+"显示Linter名称,出错或警告等相关信息
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+""pydiction
+"let g:pydiction_location = '~/.vim/plugin/pydiction/complete-dict'
+"let g:pydiction_menu_height = 3
