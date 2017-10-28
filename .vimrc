@@ -8,9 +8,10 @@ Plug 'tomasr/molokai'
 Plug 'w0rp/ale'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'scrooloose/nerdcommenter'
-""Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 Plug 'Chiel92/vim-autoformat'
 Plug '~/.vim/plugged/autherinfo'
+Plug 'godlygeek/tabular'
 call plug#end()
 
 "
@@ -349,6 +350,7 @@ let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-""pydiction
-"let g:pydiction_location = '~/.vim/plugin/pydiction/complete-dict'
-"let g:pydiction_menu_height = 3
+
+
+"supertab
+let g:SuperTabRetainCompletionType=2
