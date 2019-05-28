@@ -1,0 +1,148 @@
+# i3 config file (v4)
+
+#设置键
+set $mod Mod1
+
+
+#对特定窗口设置
+#for_window [class="^.*"] floating enable
+for_window [urgent=latest] focus
+
+#====特定窗口移动到特定工作区====
+assign [class="Rxvt"] $workspace1
+assign [class="Google-chrome"] $workspace3
+assign [class="Firefox"] $workspace3
+assign [class="Eclipse"] $workspace4
+assign [class="Pcmanfm"] $workspace2
+#============================
+
+#=========字体设置=========
+font xft:Ubuntu 11
+font pango:Hack 11px
+#=========================
+
+#=========自启动应用=========	
+exec --no-startup-id feh --bg-scale Pictures/default.wallpaper
+exec --no-startup-id compton -b
+exec --no-startup-id xfce4-panel -d
+exec --no-startup-id nm-applet
+exec --no-startup-id fcitx
+exec --no-startup-id /usr/lib/polkit-1-gnome/polkit-gnome-authentication-agent-1 
+#===========================
+
+#=========按键绑定=========
+floating_modifier Mod1
+bindsym Mod1+Tab exec rofi -show
+bindsym Mod1+Return exec urxvt
+bindsym Mod1+Shift+q kill
+
+#移动聚焦
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+
+bindsym Mod1+d exec rofi -show drun
+bindsym Mod1+Shift+space floating toggle
+bindsym Mod1+f fullscreen toggle
+bindsym Mod1+space focus mode_toggle
+#最小化/取消最小化
+bindsym Mod1+minus scratchpad show
+
+#工作区设置
+set $workspace1 "1: "
+set $workspace2 "2: "
+set $workspace3 "3: "
+set $workspace4 "4:  "
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
+
+bindsym Mod1+1 workspace $workspace1 
+bindsym Mod1+3 workspace $workspace2 
+bindsym Mod1+2 workspace $workspace3 
+bindsym Mod1+4 workspace $workspace4 
+bindsym Mod1+5 workspace  
+bindsym Mod1+6 workspace  
+bindsym Mod1+7 workspace  
+bindsym Mod1+8 workspace ô 
+
+bindsym Mod1+Shift+1 move container to workspace $workspace1
+bindsym Mod1+Shift+4 move container to workspace $workspace4 
+bindsym Mod1+Shift+3 move container to workspace $workspace3 
+bindsym Mod1+Shift+5 move container to workspace   
+bindsym Mod1+Shift+6 move container to workspace  
+bindsym Mod1+Shift+7 move container to workspace  
+bindsym Mod1+Shift+8 move container to workspace ô 
+bindsym Mod1+Shift+2 move container to workspace $workspace2
+
+#重载配置文件
+bindsym Mod1+Shift+c reload
+#重启 i3
+bindsym Mod1+Shift+r restart
+
+#===========================
+
+
+#=========新窗口边框设置=========
+new_window pixel 3
+new_float pixel 1
+#==============================
+
+#=========主题设置=========
+# class                 border  backgr. text    indicator child_border
+client.focused 		#0088CC #0088CC #ffffff #dddddd
+client.focused_inactive #333333 #333333 #888888 #292d2e
+client.unfocused 	#333333 #333333 #888888 #292d2e
+client.urgent 		#2f343a #900000 #ffffff #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff
+#=========================
+
+  
+
+
+#========其他============
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym Mod1+r mode "resize"
+
+
+hide_edge_borders smart
+
+
+
+
+
+
+
